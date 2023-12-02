@@ -3,6 +3,7 @@ class Order:
 
   def __init__(self, name, phone, email, standard_pizzas=None, custom_pizzas=None, side_dishes=None) -> None:
     Order.no_of_orders += 1
+    self.__order_num = Order.no_of_orders
     self.__name = name
     self.__phone = phone
     self.__email = email
@@ -11,7 +12,7 @@ class Order:
     self.__side_dishes = side_dishes if side_dishes is not None else []
 
   def __str__(self) -> str:
-    output = f"Order Number: {Order.no_of_orders}\nCustomer Name: {self.__name}\nCustomer Phone: {self.__phone}\nCustomer Email: {self.__email}\n"
+    output = f"Order Number: {self.__order_num}\nCustomer Name: {self.__name}\nCustomer Phone: {self.__phone}\nCustomer Email: {self.__email}\n"
     if self.__standard_pizzas:
       output += "\nList of Pizza Ordered:\n"
       for standard_pizza in self.__standard_pizzas:
