@@ -17,8 +17,8 @@ class PizzaRecipeRepository:
       recipes = []
       for row in reader:
         ingredients = {}
-        for i in range(2, len(row), 2):
+        for i in range(1, len(row), 2):
           ingredients[row[i]] = row[i + 1]
-        recipe = PizzaRecipe(row[0], ingredients, float(row[1]))
+        recipe = PizzaRecipe(row[0], ingredients)
         recipes.append(recipe)
     return recipes

@@ -1,4 +1,4 @@
-from side_dish import SideDish
+from side_dish import *
 from side_dish_repository import SideDishRepository
 
 class SideDishManager:
@@ -18,7 +18,7 @@ class SideDishManager:
       if side_dish.name == side_dish_name:
         return side_dish
 
-  def get_side_dishes_by_type(self, side_dish_type: str) -> list[SideDish]:
+  def get_side_dishes_by_type(self, side_dish_type: SideDishType) -> list[SideDish]:
     dishes = []
     for side_dish in self.__side_dishes:
       if side_dish.type == side_dish_type:

@@ -91,7 +91,6 @@ class PizzaStore:
   def process_recipe_menu(self, option: int) -> bool:
     if option == 1:
       recipe_name = input("Please enter the name of the recipe: ")
-      price = float(input("Please enter the name of an ingredient: "))
       flag = True
       ingredients = {}
       while flag:
@@ -103,7 +102,7 @@ class PizzaStore:
           flag = True
         else:
           flag = False
-      recipe = PizzaRecipe(recipe_name, ingredients, price)
+      recipe = PizzaRecipe(recipe_name, ingredients)
       self.__recipe_manager.add_recipe(recipe)
     elif option == 2:
       recipe_name = input("Please enter the name of the recipe: ")

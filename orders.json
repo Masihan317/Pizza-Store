@@ -1,0 +1,25 @@
+{
+  "orders": [
+    {
+      "name": "Jamie",
+      "phone": "4358738273",
+      "email": "jding@gmail.com",
+      "standard_pizza": ["Pepperoni Pizza", "Deluxe Pizza"],
+      "custom_pizza": [],
+      "side_dish": ["Chocolate Donut Bites"]
+    },
+    {
+      "name": "Sihan",
+      "phone": "0123456789",
+      "email": "masihan2000@gmail.com",
+      "custom_pizza": []
+    },
+    {
+      "name": "Rose",
+      "phone": "9876543210",
+      "email": "rosey@gmail.com",
+      "standard_pizza": ["Meat Lovers Pizza", "Vegetarian Pizza"],
+      "side_dish": ["Breadsticks", "Chocolate Donut Bites", "Bottled Water"]
+    }
+  ]
+}
