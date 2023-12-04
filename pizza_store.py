@@ -1,26 +1,32 @@
 from inventory_manager import *
 from recipe_manager import *
+from pizza_menu_manager import *
 from side_dish_manager import *
 from order_manager import *
+from custom_pizza_item import *
 
 class PizzaStore:
   def __init__(self) -> None:
     self.__inventory_manager = InventoryManager()
     self.__recipe_manager = RecipeManager()
+    self.__pizza_menu_manager = PizzaMenuManager()
     self.__side_dish_manager = SideDishManager()
     self.__order_manager = OrderManager()
     self.__inventory_manager.read_from_file()
     self.__recipe_manager.read_from_file()
+    self.__pizza_menu_manager.read_from_file()
     self.__side_dish_manager.read_from_file()
+    self.__order_manager.read_from_file()
 
   def show_main_menu(self):
     print("Welcome to the Pizza Store Application!")
     print("Pizza Store Menu (Please enter a number from 1 to 5.)")
     print("1. Recipe Manager System")
     print("2. Ingredient Inventory System")
-    print("3. Side Dish Manager System")
-    print("4. Order Manager System")
-    print("5. Quit")
+    print("3. Pizza Menu Manager System")
+    print("4. Side Dish Menu Manager System")
+    print("5. Order Manager System")
+    print("6. Quit")
 
   def show_recipe_menu(self):
     print("Welcome to the Recipe Manager System!")
@@ -41,18 +47,39 @@ class PizzaStore:
     print("4. List Ingredients")
     print("5. Return to Pizza Store Application")
 
+  def show_menu_item_menu(self):
+    print("Welcome to the Pizza Menu Manager System! (Please enter a number from 1 to 7.)")
+    print("1. Add Pizza Menu Item")
+    print("2. Remove Pizza Menu Item")
+    print("3. Update Pizza Menu Item")
+    print("4. Get Pizza Menu Item by Category")
+    print("5. List All Pizza Menu Item")
+    print("6. List Custom Pizza Item Options")
+    print("7. Return to Pizza Store Application")
+
   def show_side_dish_menu(self):
     print("Welcome to the Side Dish Manager System!")
     print("Side Dish Manager Menu (Please enter a number from 1 to 6.)")
     print("1. Add Side Dish")
     print("2. Remove Side Dish")
     print("3. Search Side Dish by Name")
-    print("4. List Side Dishes by Type")
+    print("4. Get Side Dishes by Type")
     print("5. List All Side Dishes")
     print("6. Return to Pizza Store Application")
 
   def show_order_menu(self):
-    print("Welcome to the Order Manager System!")
+    print("Welcome to the Order Manager System! (Please enter a number from 1 to 11.)")
+    print("1. Add Order")
+    print("2. Remove Order")
+    print("3. Process Order")
+    print("4. Process All Orders")
+    print("5. Display Order Detail")
+    print("6. Display Order Details for All Orders")
+    print("7. Generate Order Slips for Kitchen")
+    print("8. Generate All Order Slips for Kitchen")
+    print("9. Print Customer Receipt")
+    print("10. Print All Receipts")
+    print("11. Return to Pizza Store Application")
 
   def process_main_menu(self, option: int) -> bool:
     if option == 1:
@@ -72,18 +99,25 @@ class PizzaStore:
     elif option == 3:
       flag = True
       while flag:
+        self.show_menu_item_menu()
+        option = int(input("Enter your choice: "))
+        print()
+        flag = self.process_menu_item_menu(option)
+    elif option == 4:
+      flag = True
+      while flag:
         self.show_side_dish_menu()
         option = int(input("Enter your choice: "))
         print()
         flag = self.process_side_dish_menu(option)
-    elif option == 4:
+    elif option == 5:
       flag = True
       while flag:
         self.show_order_menu()
         option = int(input("Enter your choice: "))
         print()
         flag = self.process_order_menu(option)
-    elif option == 5:
+    elif option == 6:
       print("Thank you for using the Pizza Store Application! I hope it helped :D")
       return False
     return True
@@ -155,6 +189,24 @@ class PizzaStore:
       return False
     return True
 
+  def process_menu_item_menu(self, option: int) -> bool:
+    if option == 1:
+      pass
+    elif option == 2:
+      pass
+    elif option == 3:
+      pass
+    elif option == 4:
+      pass
+    elif option == 5:
+      pass
+    elif option == 6:
+      pass
+    elif option == 7:
+      self.__pizza_menu_manager.save_to_file()
+      return False
+    return True
+
   def process_side_dish_menu(self, option: int) -> bool:
     if option == 1:
       side_dish_name = input("Please enter the name of the side dish: ")
@@ -162,13 +214,13 @@ class PizzaStore:
       price = float(input("Please enter the price of the side dish: "))
       type = input("Please enter the type of the side dish: ")
       side_dish = SideDish(side_dish_name, description, price, type)
-      self.__side_dish_manager.add_side_dishes(side_dish)
+      self.__side_dish_manager.add_side_dish(side_dish)
     elif option == 2:
       side_dish_name = input("Please enter the name of the side dish to remove: ")
-      self.__side_dish_manager.remove_side_dishes(side_dish_name)
+      self.__side_dish_manager.remove_side_dish(side_dish_name)
     elif option == 3:
       side_dish_name = input("Please enter the name of the side dish: ")
-      self.__side_dish_manager.get_side_dishes_by_name(side_dish_name)
+      self.__side_dish_manager.get_side_dish_by_name(side_dish_name)
     elif option == 4:
       side_dish_type = input("Please enter the type of the side dish: ")
       self.__side_dish_manager.get_side_dishes_by_type(side_dish_type)
@@ -180,7 +232,32 @@ class PizzaStore:
     return True
 
   def process_order_menu(self, option: int) -> bool:
-    pass
+    if option == 1:
+      pass
+    elif option == 2:
+      pass
+    elif option == 3:
+      pass
+    elif option == 4:
+      pass
+    elif option == 5:
+      pass
+    elif option == 6:
+      pass
+    elif option == 6:
+      pass
+    elif option == 7:
+      pass
+    elif option == 8:
+      pass
+    elif option == 9:
+      pass
+    elif option == 10:
+      pass
+    elif option == 11:
+      self.__order_manager.save_to_file()
+      return False
+    return True
 
 def main():
   app = PizzaStore()

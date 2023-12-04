@@ -20,6 +20,10 @@ class SideDish:
     return self.__name
 
   @property
+  def price(self) -> float:
+    return self.__price
+
+  @property
   def type(self) -> SideDishType:
     return self.__type
 

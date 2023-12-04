@@ -5,15 +5,15 @@ class SideDishManager:
   def __init__(self) -> None:
     self.__side_dishes: list[SideDish] = []
 
-  def add_side_dishes(self, side_dishes: SideDish):
-    self.__side_dishes.append(side_dishes)
+  def add_side_dish(self, side_dish: SideDish):
+    self.__side_dishes.append(side_dish)
 
-  def remove_side_dishes(self, side_dish_name: str):
+  def remove_side_dish(self, side_dish_name: str):
     for side_dish in self.__side_dishes:
       if side_dish.name == side_dish_name:
         self.__side_dishes.remove(side_dish)
 
-  def get_side_dishes_by_name(self, side_dish_name: str) -> SideDish:
+  def get_side_dish_by_name(self, side_dish_name: str) -> SideDish:
     for side_dish in self.__side_dishes:
       if side_dish.name == side_dish_name:
         return side_dish

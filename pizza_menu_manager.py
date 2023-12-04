@@ -22,12 +22,10 @@ class PizzaMenuManager:
         menu_item.recipe = new_menu_item.recipe
         menu_item.category = new_menu_item.category
 
-  def get_menu_items_by_name(self, name: str) -> list[PizzaMenuItem]:
-    menu_items = []
+  def get_menu_items_by_name(self, name: str, size: PizzaSize) -> PizzaMenuItem:
     for menu_item in self.__menu_items:
-      if menu_item.name == name:
-        menu_items.append(menu_item)
-    return menu_items
+      if menu_item.name == name and menu_item.size == size:
+        return menu_item
 
   def get_menu_items_by_category(self, category: PizzaCategory) -> list[PizzaMenuItem]:
     menu_items = []
@@ -47,4 +45,3 @@ class PizzaMenuManager:
   def read_from_file(self) -> None:
     repository = PizzaMenuRepository("pizza_menu.csv")
     self.__menu_items = repository.load_pizza_menu()
-

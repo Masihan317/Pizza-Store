@@ -7,7 +7,7 @@ class PizzaRecipe:
     output = f"Recipe Name: {self.__name}\nList of Ingredients:\n"
     for ingredient, quantity in self.__ingredients.items():
       output += f"Ingredient Name: {ingredient} | Quantity Needed: {quantity}\n"
-    return output
+    return output.strip()
 
   @property
   def name(self) -> str:

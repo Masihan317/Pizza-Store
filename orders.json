@@ -4,22 +4,83 @@
       "name": "Jamie",
       "phone": "4358738273",
       "email": "jding@gmail.com",
-      "standard_pizza": ["Pepperoni Pizza", "Deluxe Pizza"],
-      "custom_pizza": [],
-      "side_dish": ["Chocolate Donut Bites"]
+      "standard_pizza": [
+        {
+          "name": "Pepperoni Pizza",
+          "size": "SMALL"
+        },
+        {
+          "name": "Deluxe Pizza",
+          "size": "MEDIUM"
+        }
+      ],
+      "custom_pizza": [
+        {
+          "size": "MEDIUM",
+          "crust": "ORIGINAL",
+          "sauce": "MARINARA",
+          "ingredients": {
+            "Mushroom": 2,
+            "Bacon": 2,
+            "Ham": 3
+          }
+        }
+      ],
+      "side_dish": [
+        "Chocolate Donut Bites"
+      ],
+      "processed": false
     },
     {
       "name": "Sihan",
       "phone": "0123456789",
       "email": "masihan2000@gmail.com",
-      "custom_pizza": []
+      "standard_pizza": [],
+      "custom_pizza": [
+        {
+          "size": "SMALL",
+          "crust": "THIN",
+          "sauce": "BBQ_SAUCE",
+          "ingredients": {
+            "Pepper": 5,
+            "Cheddar": 2,
+            "Chicken": 3
+          }
+        },
+        {
+          "size": "LARGE",
+          "crust": "GLUTEN_FREE",
+          "sauce": "ALFREDO_SAUCE",
+          "ingredients": {
+            "Tomato": 5,
+            "Onion": 6
+          }
+        }
+      ],
+      "side_dish": [],
+      "processed": false
     },
     {
       "name": "Rose",
       "phone": "9876543210",
       "email": "rosey@gmail.com",
-      "standard_pizza": ["Meat Lovers Pizza", "Vegetarian Pizza"],
-      "side_dish": ["Breadsticks", "Chocolate Donut Bites", "Bottled Water"]
+      "standard_pizza": [
+        {
+          "name": "Meat Lovers Pizza",
+          "size": "LARGE"
+        },
+        {
+          "name": "Vegetarian Pizza",
+          "size": "LARGE"
+        }
+      ],
+      "custom_pizza": [],
+      "side_dish": [
+        "Breadsticks",
+        "Chocolate Donut Bites",
+        "Bottled Water"
+      ],
+      "processed": false
     }
   ]
 }
