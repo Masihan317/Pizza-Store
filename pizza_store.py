@@ -175,7 +175,8 @@ class PizzaStore:
       ingredient_name = input("Please enter the name of the ingredient: ")
       quantity = int(input("Please enter the quantity of the ingredient: "))
       reorder_level = int(input("Please enter the reorder level of the ingredient: "))
-      ingredient = Ingredient(ingredient_name, quantity, reorder_level)
+      unit = input("Please enter the unit of the ingredient: ")
+      ingredient = Ingredient(ingredient_name, quantity, reorder_level, unit)
       self.__inventory_manager.add_ingredient(ingredient)
     elif option == 2:
       ingredient_name = input("Please enter the name of the ingredient: ")

@@ -16,6 +16,6 @@ class IngredientRepository:
       reader = csv.reader(file)
       ingredients = []
       for row in reader:
-        ingredient = Ingredient(row[0], int(row[1]), int(row[2]))
+        ingredient = Ingredient(row[0], int(row[1]), int(row[2]), row[3])
         ingredients.append(ingredient)
     return ingredients

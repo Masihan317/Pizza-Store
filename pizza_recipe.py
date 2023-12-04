@@ -24,7 +24,6 @@ class PizzaRecipe:
   def to_list(self):
     lst: list[str] = []
     lst.append(self.__name)
-    lst.append(self.__price)
     for ingredient, quantity in self.__ingredients.items():
       lst.append(ingredient)
       lst.append(quantity)
