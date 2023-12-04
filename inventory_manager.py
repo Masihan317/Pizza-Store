@@ -17,11 +17,11 @@ class InventoryManager:
   def remove_ingredient(self, name: str, quantity: int):
     for ingredient in self.__ingredients:
       if ingredient.name == name:
-        ingredient.quantity -= quantity
+        ingredient.quantity -= int(quantity)
         self.check_reorder_levels()
 
   def use_ingredient(self, recipe: dict[str, int]):
-    for ingredient, quantity in recipe:
+    for ingredient, quantity in recipe.items():
       self.remove_ingredient(ingredient, quantity)
       self.check_reorder_levels()
 
@@ -29,6 +29,10 @@ class InventoryManager:
     for ingredient in self.__ingredients:
       if ingredient.quantity < ingredient.reorder_level:
         print(f"Alert! The supply of {ingredient.name} is low. Please add more.\n")
+
+  def list_available_ingredients(self) -> str:
+    output = " | ".join(ingredient.name for ingredient in self.__ingredients)
+    return output
 
   def print_inventory(self):
     for ingredient in self.__ingredients:

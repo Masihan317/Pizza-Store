@@ -13,32 +13,44 @@ class OrderManager:
       if order.order_num == order_num:
         self.__orders.remove(order)
 
-  def process_order(self, order_num):
+  def search_order(self, order_num: int) -> Order:
+    for order in self.__orders:
+      if order.order_num == order_num:
+        return order
+
+  def list_orders(self) -> list[Order]:
+    orders = []
+    for order in self.__orders:
+      orders.append(order)
+    return orders
+
+  def check_order_status(self, order_num: int) -> bool:
+    for order in self.__orders:
+      if order.order_num == order_num:
+        return order.processed
+
+  def check_all_orders_status(self) -> list[int]:
+    processed = []
+    for order in self.__orders:
+      if not order.processed:
+        processed.append(order.order_num)
+    return processed
+
+  def process_order(self, order_num: int) -> None:
     for order in self.__orders:
       if order.order_num == order_num:
         order.processed = True
 
-  def process_all_orders(self):
+  def process_all_orders(self) -> None:
     for order in self.__orders:
       order.processed = True
 
-  def display_order_detail(self, order_num: int):
-    for order in self.__orders:
-      if order.order_num == order_num:
-        return order.__str__()
-
-  def display_all_orders_detail(self):
-    order_details = []
-    for order in self.__orders:
-      order_details.append(order.__str__())
-    return order_details
-
-  def generate_order_slips_for_kitchen(self, order_num: int):
+  def generate_order_slips_for_kitchen(self, order_num: int) -> str:
     for order in self.__orders:
       if order.order_num == order_num:
         return order.kitchen_slip()
 
-  def generate_all_order_slips_for_kitchen(self):
+  def generate_all_order_slips_for_kitchen(self) -> list[str]:
     order_slips = []
     for order in self.__orders:
       order_slips.append(order.kitchen_slip())

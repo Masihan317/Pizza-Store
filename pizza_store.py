@@ -52,10 +52,11 @@ class PizzaStore:
     print("1. Add Pizza Menu Item")
     print("2. Remove Pizza Menu Item")
     print("3. Update Pizza Menu Item")
-    print("4. Get Pizza Menu Item by Category")
-    print("5. List All Pizza Menu Item")
-    print("6. List Custom Pizza Item Options")
-    print("7. Return to Pizza Store Application")
+    print("4. Search Pizza Menu Item by Name")
+    print("5. Get Pizza Menu Item by Category")
+    print("6. List All Pizza Menu Item")
+    print("7. List Custom Pizza Item Options")
+    print("8. Return to Pizza Store Application")
 
   def show_side_dish_menu(self):
     print("Welcome to the Side Dish Manager System!")
@@ -185,24 +186,51 @@ class PizzaStore:
     elif option == 4:
       self.__inventory_manager.print_inventory()
     elif option == 5:
+      print("Returning to Pizza Store Application...")
       self.__inventory_manager.save_to_file()
       return False
     return True
 
   def process_menu_item_menu(self, option: int) -> bool:
     if option == 1:
-      pass
+      name = input("Please enter the name of the menu item: ")
+      description = input("Please enter the description of the menu item: ")
+      price = float(input("Please enter the price of the menu item: "))
+      size = input("Please enter the size of the menu item (SMALL/MEDIUM/LARGE): ")
+      recipe_name = input("Please enter the recipe name of the menu item: ")
+      recipe = self.__recipe_manager.get_recipe_by_name(recipe_name)
+      category = input("Please enter the category of the menu item (VEGETARIAN/MEATLOVERS/SPECIALTY): ")
+      menu_item = PizzaMenuItem(name, description, price, size, recipe, category)
+      self.__pizza_menu_manager.add_menu_item(menu_item)
     elif option == 2:
-      pass
+      name = input("Please enter the name of the menu item to remove: ")
+      self.__pizza_menu_manager.remove_menu_item(name)
     elif option == 3:
-      pass
+      name = input("Please enter the name of the menu item: ")
+      description = input("Please enter the new description of the menu item: ")
+      price = float(input("Please enter the new price of the menu item: "))
+      size = input("Please enter the new size of the menu item (SMALL/MEDIUM/LARGE): ")
+      recipe_name = input("Please enter the new recipe name of the menu item: ")
+      recipe = self.__recipe_manager.get_recipe_by_name(recipe_name)
+      category = input("Please enter the new category of the menu item (VEGETARIAN/MEATLOVERS/SPECIALTY): ")
+      menu_item = PizzaMenuItem(name, description, price, size, recipe, category)
+      self.__pizza_menu_manager.update_menu_item(name, menu_item)
     elif option == 4:
-      pass
+      name = input("Please enter the name of the menu item: ")
+      menu_item = self.__pizza_menu_manager.get_menu_items_by_name(name)
+      print(menu_item)
     elif option == 5:
-      pass
+      category = input("Please enter the category of the menu item (VEGETARIAN/MEATLOVERS/SPECIALTY): ")
+      menu_items = self.__pizza_menu_manager.get_menu_items_by_category(category)
+      for menu_item in menu_items:
+        print(menu_items)
+        print()
     elif option == 6:
-      pass
+      menu_items = self.__pizza_menu_manager.list_menu_items()
     elif option == 7:
+      self.print_custom_pizza_info()
+    elif option == 8:
+      print("Returning to Pizza Store Application...")
       self.__pizza_menu_manager.save_to_file()
       return False
     return True
@@ -212,7 +240,7 @@ class PizzaStore:
       side_dish_name = input("Please enter the name of the side dish: ")
       description = input("Please enter the description of the side dish: ")
       price = float(input("Please enter the price of the side dish: "))
-      type = input("Please enter the type of the side dish: ")
+      type = input("Please enter the type of the side dish (APPETIZER/DESSERT/BEVERAGE): ")
       side_dish = SideDish(side_dish_name, description, price, type)
       self.__side_dish_manager.add_side_dish(side_dish)
     elif option == 2:
@@ -222,7 +250,7 @@ class PizzaStore:
       side_dish_name = input("Please enter the name of the side dish: ")
       self.__side_dish_manager.get_side_dish_by_name(side_dish_name)
     elif option == 4:
-      side_dish_type = input("Please enter the type of the side dish: ")
+      side_dish_type = input("Please enter the type of the side dish (APPETIZER/DESSERT/BEVERAGE): ")
       self.__side_dish_manager.get_side_dishes_by_type(side_dish_type)
     elif option == 5:
       self.__side_dish_manager.list_side_dishes()
@@ -233,31 +261,112 @@ class PizzaStore:
 
   def process_order_menu(self, option: int) -> bool:
     if option == 1:
-      pass
+      customer_name = input("Please enter the customer name: ")
+      customer_phone = input("Please enter the customer phone: ")
+      customer_email = input("Please enter the customer email: ")
+      standard_pizzas = []
+      while True:
+        add_std_pizza = input("Are there any more standard pizza orders to add? (y/n) ").lower()
+        if add_std_pizza == 'n':
+          break
+        name = input("Please enter the name of the standard pizza item: ")
+        size = input("Please enter the size of the standard pizza item (SMALL/MEDIUM/LARGE): ")
+        standard_pizza = self.__pizza_menu_manager.get_menu_items_by_name(name, size)
+        standard_pizzas.append(standard_pizza)
+      custom_pizzas = []
+      while True:
+        add_cust_pizza = input("Are there any more custom pizza orders to add? (y/n) ").lower()
+        if add_cust_pizza == 'n':
+          break
+        size = input("Please enter the size of the custom pizza item (SMALL/MEDIUM/LARGE): ")
+        crust = input("Please enter the crust of the custom pizza item (ORIGINAL/THIN/GLUTEN_FREE): ")
+        sauce = input("Please enter the sauce of the custom pizza item (MARINARA/BBQ_SAUCE/ALFREDO_SAUCE): ")
+        ingredients = {}
+        while True:
+          ingredient = input("Please enter the name of a custom ingredient: ")
+          quantity = int(input("Please enter the quantity of that ingredient: "))
+          ingredients[ingredient] = quantity
+          more_ingredients = input("Are there any more ingredients to add? (y/n) ").lower()
+          if more_ingredients == 'n':
+            break
+        custom_pizza = CustomPizzaItem(size, crust, sauce, ingredients)
+        custom_pizzas.append(custom_pizza)
+      side_dishes = []
+      while True:
+        add_side_dish = input("Are there any more side dish orders to add? (y/n) ").lower()
+        if add_side_dish == 'n':
+          break
+        name = input("Please enter the name of the side dish item: ")
+        side_dish = self.__side_dish_manager.get_side_dish_by_name(name)
+        side_dishes.append(side_dish)
+        order = Order(customer_name, customer_phone, customer_email, standard_pizzas, custom_pizzas, side_dishes)
+        self.__order_manager.add_order(order)
     elif option == 2:
-      pass
+      order_num = int(input("Please enter the order number: "))
+      self.__order_manager.remove_order(order_num)
     elif option == 3:
-      pass
+      order_num = int(input("Please enter the order number: "))
+      order = self.__order_manager.search_order(order_num)
+      processed = self.__order_manager.check_order_status(order_num)
+      if not processed:
+        for standard_pizza in order.standard_pizzas:
+          self.__inventory_manager.use_ingredient(standard_pizza.recipe.ingredients)
+        for custom_pizza in order.custom_pizzas:
+          self.__inventory_manager.use_ingredient(custom_pizza.ingredients)
+        self.__inventory_manager.save_to_file()
+        self.__order_manager.process_order(order_num)
     elif option == 4:
-      pass
+      orders = self.__order_manager.list_orders()
+      not_processed = self.__order_manager.check_all_orders_status()
+      for order in orders:
+        if order.order_num in not_processed:
+          for standard_pizza in order.standard_pizzas:
+            self.__inventory_manager.use_ingredient(standard_pizza.recipe.ingredients)
+          for custom_pizza in order.custom_pizzas:
+            self.__inventory_manager.use_ingredient(custom_pizza.ingredients)
+      self.__inventory_manager.save_to_file()
+      self.__order_manager.process_all_orders()
     elif option == 5:
-      pass
+      order_num = int(input("Please enter the order number: "))
+      order = self.__order_manager.search_order(order_num)
+      print(order)
+      print()
     elif option == 6:
-      pass
-    elif option == 6:
-      pass
+      orders = self.__order_manager.list_orders()
+      print("\n\n".join(order.__str__() for order in orders))
+      print()
     elif option == 7:
-      pass
+      order_num = int(input("Please enter the order number: "))
+      print(self.__order_manager.generate_order_slips_for_kitchen(order_num))
+      print()
     elif option == 8:
-      pass
+      orders = self.__order_manager.generate_all_order_slips_for_kitchen()
+      print("\n\n".join(orders))
+      print()
     elif option == 9:
-      pass
+      order_num = int(input("Please enter the order number: "))
+      print(self.__order_manager.generate_receipt_for_customer(order_num))
+      print()
     elif option == 10:
-      pass
+      orders = self.__order_manager.generate_all_receipts()
+      print("\n\n".join(orders))
+      print()
     elif option == 11:
       self.__order_manager.save_to_file()
       return False
     return True
+
+  def print_custom_pizza_info(self):
+    custom_pizza_info = "There's an option to create your own pizza.\n"
+    custom_pizza_info += "Please pick a size:\n"
+    custom_pizza_info += " | ".join([size.name for size in CustomPizzaSize])
+    custom_pizza_info += "\nPlease pick a crust:\n"
+    custom_pizza_info += " | ".join([crust.name for crust in CustomPizzaCrust])
+    custom_pizza_info += "\nPlease pick a sauce:\n"
+    custom_pizza_info += " | ".join([sauce.name for sauce in CustomPizzaSauce])
+    custom_pizza_info += "\nPlease pick your toppings:\n"
+    custom_pizza_info += f"{self.__inventory_manager.list_available_ingredients()}\n"
+    print(custom_pizza_info)
 
 def main():
   app = PizzaStore()

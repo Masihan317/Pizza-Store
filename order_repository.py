@@ -27,7 +27,6 @@ class OrderRepository:
       for side_dish in order.side_dishes:
         order_object["side_dish"].append(side_dish.name)
       lst.append(order_object)
-
     json_object = json.dumps({"orders": lst}, indent=2)
     with open(self.__filename, "w") as file:
       file.write(json_object)
@@ -35,19 +34,16 @@ class OrderRepository:
   def load_orders(self):
     with open(self.__filename) as file:
       data = json.load(file)
-
       side_dish_manager = SideDishManager()
       side_dish_manager.read_from_file()
       pizza_menu_manager = PizzaMenuManager()
       pizza_menu_manager.read_from_file()
-
       orders = []
       orders_data = data["orders"]
       for order_data in orders_data:
         name = order_data.get("name")
         phone = order_data.get("phone")
         email = order_data.get("email")
-
         pizzas = []
         pizza_names = order_data.get("standard_pizza")
         if pizza_names is not None:
@@ -56,7 +52,6 @@ class OrderRepository:
             pizza_size = pizza_data.get("size")
             pizza = pizza_menu_manager.get_menu_items_by_name(pizza_name, pizza_size)
             pizzas.append(pizza)
-
         custom_pizzas = []
         custom_pizza_data = order_data.get("custom_pizza")
         if custom_pizza_data is not None:
@@ -67,18 +62,15 @@ class OrderRepository:
             custom_pizza_ingredients = cpd.get("ingredients")
             custom_pizza = CustomPizzaItem(custom_pizza_size, custom_pizza_crust, custom_pizza_sauce, custom_pizza_ingredients)
             custom_pizzas.append(custom_pizza)
-
         side_dishes = []
         side_dishes_names = order_data.get("side_dish")
         if side_dishes_names is not None:
           for side_dish_name in side_dishes_names:
             side_dish = side_dish_manager.get_side_dish_by_name(side_dish_name)
             side_dishes.append(side_dish)
-
         processed = order_data.get("processed")
         if processed is None:
           processed = False
-
         order = Order(name, phone, email, pizzas, custom_pizzas, side_dishes, processed)
         orders.append(order)
     return orders

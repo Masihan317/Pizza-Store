@@ -37,6 +37,7 @@ class PizzaMenuManager:
   def list_menu_items(self):
     for menu_item in self.__menu_items:
       print(menu_item)
+      print()
 
   def save_to_file(self) -> None:
     repository = PizzaMenuRepository("pizza_menu.csv")
