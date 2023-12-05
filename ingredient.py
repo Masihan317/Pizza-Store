@@ -24,7 +24,7 @@ class Ingredient:
   def quantity(self, quantity: int) -> None:
     self.__quantity = quantity
 
-  def to_list(self):
+  def to_list(self) -> list[str]:
     lst: list[str] = []
     lst.append(self.__name)
     lst.append(self.__quantity)

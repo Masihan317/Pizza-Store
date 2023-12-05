@@ -5,7 +5,7 @@ class IngredientRepository:
   def __init__(self, filename: str) -> None:
     self.__filename = filename
 
-  def save_ingredients(self, ingredients: list[Ingredient]):
+  def save_ingredients(self, ingredients: list[Ingredient]) -> None:
     with open(self.__filename, "w", newline="") as file:
       writer = csv.writer(file)
       for ingredient in ingredients:

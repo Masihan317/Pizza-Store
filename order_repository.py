@@ -8,7 +8,7 @@ class OrderRepository:
   def __init__(self, filename: str) -> None:
     self.__filename = filename
 
-  def save_orders(self, orders: list[Order]):
+  def save_orders(self, orders: list[Order]) -> None:
     lst = []
     for order in orders:
       order_object = {
@@ -31,7 +31,7 @@ class OrderRepository:
     with open(self.__filename, "w") as file:
       file.write(json_object)
 
-  def load_orders(self):
+  def load_orders(self) -> list[Order]:
     with open(self.__filename) as file:
       data = json.load(file)
       side_dish_manager = SideDishManager()

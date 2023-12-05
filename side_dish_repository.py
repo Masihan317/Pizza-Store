@@ -5,7 +5,7 @@ class SideDishRepository:
   def __init__(self, filename: str) -> None:
     self.__filename = filename
 
-  def save_side_dishes(self, side_dishes: list[SideDish]):
+  def save_side_dishes(self, side_dishes: list[SideDish]) -> None:
     with open(self.__filename, "w", newline="") as file:
       writer = csv.writer(file)
       for side_dish in side_dishes:

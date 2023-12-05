@@ -6,7 +6,7 @@ class PizzaMenuRepository:
   def __init__(self, filename: str) -> None:
     self.__filename = filename
 
-  def save_pizza_menu(self, recipes: list[PizzaMenuItem]):
+  def save_pizza_menu(self, recipes: list[PizzaMenuItem]) -> None:
     with open(self.__filename, "w", newline="") as file:
       writer = csv.writer(file)
       for recipe in recipes:

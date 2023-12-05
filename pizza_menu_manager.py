@@ -5,15 +5,15 @@ class PizzaMenuManager:
   def __init__(self) -> None:
     self.__menu_items: list[PizzaMenuItem] = []
 
-  def add_menu_item(self, menu_item: PizzaMenuItem):
+  def add_menu_item(self, menu_item: PizzaMenuItem) -> None:
     self.__menu_items.append(menu_item)
 
-  def remove_menu_item(self, name: str):
+  def remove_menu_item(self, name: str) -> None:
     for menu_item in self.__menu_items:
       if menu_item.name == name:
         self.__menu_items.remove(menu_item)
 
-  def update_menu_item(self, name: str, new_menu_item: PizzaMenuItem):
+  def update_menu_item(self, name: str, new_menu_item: PizzaMenuItem) -> None:
     for menu_item in self.__menu_items:
       if menu_item.name == name:
         menu_item.description = new_menu_item.description
@@ -34,7 +34,7 @@ class PizzaMenuManager:
         menu_items.append(menu_item)
     return menu_items
 
-  def list_menu_items(self):
+  def list_menu_items(self) -> None:
     for menu_item in self.__menu_items:
       print(menu_item)
       print()

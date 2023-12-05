@@ -71,7 +71,7 @@ class PizzaMenuItem:
   def __str__(self) -> str:
     return f"Pizza Name: {self.__name}\nDescription: {self.__description}\nPrice: {self.__price}\nSize: {self.__size}\nCategory: {self.__category}\n{self.__recipe}"
 
-  def to_list(self):
+  def to_list(self) -> list[str]:
     lst: list[str] = []
     lst.append(self.__name)
     lst.append(self.__description)

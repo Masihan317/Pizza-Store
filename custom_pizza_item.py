@@ -49,7 +49,7 @@ class CustomPizzaItem:
       output += f"Ingredient Name: {ingredient} | Quantity Needed: {quantity}\n"
     return output.strip()
 
-  def calculate_price(self):
+  def calculate_price(self) -> float:
     ingredient_num = 0
     for _, quantity in self.__ingredients.items():
       ingredient_num += quantity

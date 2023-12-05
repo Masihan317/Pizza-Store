@@ -3,7 +3,7 @@ from custom_pizza_item import CustomPizzaItem
 from side_dish import SideDish
 
 class Order:
-  no_of_orders = 0
+  no_of_orders: int = 0
 
   def __init__(self, name: str, phone: str, email: str, standard_pizzas: list[PizzaMenuItem]=None, custom_pizzas: list[CustomPizzaItem]=None, side_dishes: list[SideDish]=None, processed: bool=False) -> None:
     Order.no_of_orders += 1

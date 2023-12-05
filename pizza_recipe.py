@@ -21,7 +21,7 @@ class PizzaRecipe:
   def ingredients(self, ingredients) -> None:
     self.__ingredients = ingredients
 
-  def to_list(self):
+  def to_list(self) -> list[str]:
     lst: list[str] = []
     lst.append(self.__name)
     for ingredient, quantity in self.__ingredients.items():

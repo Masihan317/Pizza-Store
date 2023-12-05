@@ -5,7 +5,7 @@ class InventoryManager:
   def __init__(self) -> None:
     self.__ingredients: list[Ingredient] = []
 
-  def add_ingredient(self, ingredient: Ingredient):
+  def add_ingredient(self, ingredient: Ingredient) -> None:
     existing = False
     for existing_ingredient in self.__ingredients:
       if existing_ingredient.name == ingredient.name:
@@ -14,18 +14,18 @@ class InventoryManager:
     if not existing:
       self.__ingredients.append(ingredient)
 
-  def remove_ingredient(self, name: str, quantity: int):
+  def remove_ingredient(self, name: str, quantity: int) -> None:
     for ingredient in self.__ingredients:
       if ingredient.name == name:
         ingredient.quantity -= int(quantity)
         self.check_reorder_levels()
 
-  def use_ingredient(self, recipe: dict[str, int]):
+  def use_ingredient(self, recipe: dict[str, int]) -> None:
     for ingredient, quantity in recipe.items():
       self.remove_ingredient(ingredient, quantity)
       self.check_reorder_levels()
 
-  def check_reorder_levels(self):
+  def check_reorder_levels(self) -> None:
     for ingredient in self.__ingredients:
       if ingredient.quantity < ingredient.reorder_level:
         print(f"Alert! The supply of {ingredient.name} is low. Please add more.\n")
@@ -34,7 +34,7 @@ class InventoryManager:
     output = " | ".join(ingredient.name for ingredient in self.__ingredients)
     return output
 
-  def print_inventory(self):
+  def print_inventory(self) -> None:
     for ingredient in self.__ingredients:
       print(ingredient)
       print()

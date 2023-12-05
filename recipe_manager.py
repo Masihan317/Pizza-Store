@@ -5,15 +5,15 @@ class RecipeManager:
   def __init__(self) -> None:
     self.__recipes: list[PizzaRecipe] = []
 
-  def add_recipe(self, recipe: PizzaRecipe):
+  def add_recipe(self, recipe: PizzaRecipe) -> None:
     self.__recipes.append(recipe)
 
-  def remove_recipe(self, recipe_name: str):
+  def remove_recipe(self, recipe_name: str) -> None:
     for recipe in self.__recipes:
       if recipe.name == recipe_name:
         self.__recipes.remove(recipe)
 
-  def update_recipe(self, recipe_name: str, new_ingredients: dict[str, int]):
+  def update_recipe(self, recipe_name: str, new_ingredients: dict[str, int]) -> None:
     for recipe in self.__recipes:
       if recipe.name == recipe_name:
         recipe.ingredients = new_ingredients
@@ -23,7 +23,7 @@ class RecipeManager:
       if recipe.name == recipe_name:
         return recipe
 
-  def list_recipes(self):
+  def list_recipes(self) -> None:
     for recipe in self.__recipes:
       print(recipe)
 

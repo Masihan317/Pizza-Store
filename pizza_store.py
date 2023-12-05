@@ -18,7 +18,7 @@ class PizzaStore:
     self.__side_dish_manager.read_from_file()
     self.__order_manager.read_from_file()
 
-  def show_main_menu(self):
+  def show_main_menu(self) -> None:
     print("Welcome to the Pizza Store Application!")
     print("Pizza Store Menu (Please enter a number from 1 to 5.)")
     print("1. Recipe Manager System")
@@ -28,7 +28,7 @@ class PizzaStore:
     print("5. Order Manager System")
     print("6. Quit")
 
-  def show_recipe_menu(self):
+  def show_recipe_menu(self) -> None:
     print("Welcome to the Recipe Manager System!")
     print("Recipe Manager Menu (Please enter a number from 1 to 6.)")
     print("1. Add Recipe")
@@ -38,7 +38,7 @@ class PizzaStore:
     print("5. List Recipes")
     print("6. Return to Pizza Store Application")
 
-  def show_inventory_menu(self):
+  def show_inventory_menu(self) -> None:
     print("Welcome to the Ingredient Inventory System!")
     print("Ingredient Inventory Menu (Please enter a number from 1 to 5.)")
     print("1. Add Ingredient")
@@ -47,7 +47,7 @@ class PizzaStore:
     print("4. List Ingredients")
     print("5. Return to Pizza Store Application")
 
-  def show_menu_item_menu(self):
+  def show_menu_item_menu(self) -> None:
     print("Welcome to the Pizza Menu Manager System! (Please enter a number from 1 to 7.)")
     print("1. Add Pizza Menu Item")
     print("2. Remove Pizza Menu Item")
@@ -58,7 +58,7 @@ class PizzaStore:
     print("7. List Custom Pizza Item Options")
     print("8. Return to Pizza Store Application")
 
-  def show_side_dish_menu(self):
+  def show_side_dish_menu(self) -> None:
     print("Welcome to the Side Dish Manager System!")
     print("Side Dish Manager Menu (Please enter a number from 1 to 6.)")
     print("1. Add Side Dish")

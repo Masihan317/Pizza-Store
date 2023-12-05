@@ -5,10 +5,10 @@ class OrderManager:
   def __init__(self) -> None:
     self.__orders: list[Order] = []
 
-  def add_order(self, order: Order):
+  def add_order(self, order: Order) -> None:
     self.__orders.append(order)
 
-  def remove_order(self, order_num: int):
+  def remove_order(self, order_num: int) -> None:
     for order in self.__orders:
       if order.order_num == order_num:
         self.__orders.remove(order)

@@ -27,7 +27,7 @@ class SideDish:
   def type(self) -> SideDishType:
     return self.__type
 
-  def to_list(self):
+  def to_list(self) -> list[str]:
     lst: list[str] = []
     lst.append(self.__name)
     lst.append(self.__description)
