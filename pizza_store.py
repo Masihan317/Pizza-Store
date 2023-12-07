@@ -20,7 +20,7 @@ class PizzaStore:
 
   def show_main_menu(self) -> None:
     print("Welcome to the Pizza Store Application!")
-    print("Pizza Store Menu (Please enter a number from 1 to 5.)")
+    print("Pizza Store Menu (Please enter a number from 1 to 6.)")
     print("1. Recipe Manager System")
     print("2. Ingredient Inventory System")
     print("3. Pizza Menu Manager System")
@@ -48,7 +48,7 @@ class PizzaStore:
     print("5. Return to Pizza Store Application")
 
   def show_menu_item_menu(self) -> None:
-    print("Welcome to the Pizza Menu Manager System! (Please enter a number from 1 to 7.)")
+    print("Welcome to the Pizza Menu Manager System! (Please enter a number from 1 to 8.)")
     print("1. Add Pizza Menu Item")
     print("2. Remove Pizza Menu Item")
     print("3. Update Pizza Menu Item")
@@ -68,7 +68,7 @@ class PizzaStore:
     print("5. List All Side Dishes")
     print("6. Return to Pizza Store Application")
 
-  def show_order_menu(self):
+  def show_order_menu(self) -> None:
     print("Welcome to the Order Manager System! (Please enter a number from 1 to 11.)")
     print("1. Add Order")
     print("2. Remove Order")
@@ -218,13 +218,14 @@ class PizzaStore:
       self.__pizza_menu_manager.update_menu_item(name, menu_item)
     elif option == 4:
       name = input("Please enter the name of the menu item: ")
-      menu_item = self.__pizza_menu_manager.get_menu_items_by_name(name)
+      size = input("Please enter the size of the menu item: ")
+      menu_item = self.__pizza_menu_manager.get_menu_items_by_name(name, size)
       print(menu_item)
     elif option == 5:
       category = input("Please enter the category of the menu item (VEGETARIAN/MEATLOVERS/SPECIALTY): ")
       menu_items = self.__pizza_menu_manager.get_menu_items_by_category(category)
       for menu_item in menu_items:
-        print(menu_items)
+        print(menu_item)
         print()
     elif option == 6:
       menu_items = self.__pizza_menu_manager.list_menu_items()
@@ -249,10 +250,14 @@ class PizzaStore:
       self.__side_dish_manager.remove_side_dish(side_dish_name)
     elif option == 3:
       side_dish_name = input("Please enter the name of the side dish: ")
-      self.__side_dish_manager.get_side_dish_by_name(side_dish_name)
+      side_dish = self.__side_dish_manager.get_side_dish_by_name(side_dish_name)
+      print(side_dish)
     elif option == 4:
       side_dish_type = input("Please enter the type of the side dish (APPETIZER/DESSERT/BEVERAGE): ")
-      self.__side_dish_manager.get_side_dishes_by_type(side_dish_type)
+      side_dishes = self.__side_dish_manager.get_side_dishes_by_type(side_dish_type)
+      for side_dish in side_dishes:
+        print(side_dish)
+        print()
     elif option == 5:
       self.__side_dish_manager.list_side_dishes()
     elif option == 6:
@@ -357,7 +362,7 @@ class PizzaStore:
       return False
     return True
 
-  def print_custom_pizza_info(self):
+  def print_custom_pizza_info(self) -> None:
     custom_pizza_info = "There's an option to create your own pizza.\n"
     custom_pizza_info += "Please pick a size:\n"
     custom_pizza_info += " | ".join([size.name for size in CustomPizzaSize])

@@ -1,0 +1,156 @@
+<mxfile host="65bd71144e">
+    <diagram id="gFxkT0DyHyxh4xu2Qbpf" name="Page-1">
+        <mxGraphModel dx="2301" dy="1620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-120" y="-140" width="840" height="560" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-2" value="PizzaStoreManager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-210" y="110" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-4" value="PizzaStoreChef" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="205" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-7" target="lt5erGNGad_j3tspca0G-37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-7" value="PizzaStoreAppProgrammer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="330" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-8" value="PizzaStoreApplication" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="-126" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-9" value="PizzaStoreCashier" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="5" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-10" target="lt5erGNGad_j3tspca0G-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-10" value="Ingredient Inventory" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="270" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-11" target="lt5erGNGad_j3tspca0G-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-11" value="Recipe Manager&lt;br&gt;(Add/Remove/Update/Search/List Recipes)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-60" y="-5" width="260" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-179.99999999999977" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-12" target="lt5erGNGad_j3tspca0G-34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="includes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="12">
+                    <mxGeometry x="-0.0755" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-12" target="lt5erGNGad_j3tspca0G-35">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="includes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="14">
+                    <mxGeometry x="0.0032" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="includes" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-12" target="lt5erGNGad_j3tspca0G-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-12" value="Pizza Menu Manager" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="115" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-179.99999999999977" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-13" value="Side Dish Manager&lt;br&gt;(Add/Remove/Search/List Side Dish)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-100" width="210" height="66" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-179.99999999999977" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="includes" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-14" target="lt5erGNGad_j3tspca0G-36">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="includes" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-14" target="lt5erGNGad_j3tspca0G-40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="includes" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-14" target="lt5erGNGad_j3tspca0G-38">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="includes" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.288;entryY=-0.019;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-14" target="lt5erGNGad_j3tspca0G-39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-14" value="Order Manager" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="60" width="140" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-15" value="Custom Pizza Ordering/Print Custom Pizza Menu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="140" width="150" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-24" value="Add/Remove/List Ingredients" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-60" y="355" width="185" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-25" target="lt5erGNGad_j3tspca0G-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-25" value="Check Supply/Use Ingredients" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="330" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.229;entryY=0.121;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-10" target="lt5erGNGad_j3tspca0G-24">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-30" value="includes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="lt5erGNGad_j3tspca0G-27">
+                    <mxGeometry x="0.0346" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;shadow=1;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-10" target="lt5erGNGad_j3tspca0G-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-32" value="includes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="lt5erGNGad_j3tspca0G-28">
+                    <mxGeometry x="-0.0258" y="-2" relative="1" as="geometry">
+                        <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-34" value="Add/Remove/Update/Search/List Pizza Menu Item" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="210" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-35" value="List Custom Pizza Item Options" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="270" width="215" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-36" target="lt5erGNGad_j3tspca0G-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-36" value="Add/Remove/Process Orders" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="-60" width="182.5" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-37" value="App maintenance /update" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="485" y="320" width="122.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-38" value="Display Order Details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="522.5" y="115" width="182.5" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-39" target="lt5erGNGad_j3tspca0G-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-39" value="Generate Kitchen Prep Slips" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="185" width="182.5" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="lt5erGNGad_j3tspca0G-40" target="lt5erGNGad_j3tspca0G-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt5erGNGad_j3tspca0G-40" value="Generate Receipts" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="10" width="182.5" height="55" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

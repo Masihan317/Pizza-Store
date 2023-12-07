@@ -18,6 +18,8 @@ class InventoryManager:
     for ingredient in self.__ingredients:
       if ingredient.name == name:
         ingredient.quantity -= int(quantity)
+        if ingredient.quantity <= 0:
+          self.__ingredients.remove(ingredient)
         self.check_reorder_levels()
 
   def use_ingredient(self, recipe: dict[str, int]) -> None:

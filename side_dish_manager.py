@@ -28,6 +28,7 @@ class SideDishManager:
   def list_side_dishes(self) -> None:
     for side_dish in self.__side_dishes:
       print(side_dish)
+      print()
 
   def save_to_file(self) -> None:
     repository = SideDishRepository("side_dishes.csv")
