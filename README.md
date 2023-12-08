@@ -136,7 +136,7 @@ The menu itself is quite self-explanatory with existing data in csv or json file
 ### Example Test Cases
 Since the main purpose of this application is for the store owner to efficiently process customer orders, I am going to focus on showing what orders look like in the system. (Adding ingredients, recipes, pizza menu items, and side dishes are very self-explanatory with the prompts in the program so I am going to skip over those.)
 
-There are 3 orders already in the orders.json file. I am going to showcase order no.1 because it is the one with all 3 types of order items (standard pizza orders, custom pizza orders, and side dish orders). The standard pizza, custom pizza, and side dish orders are all lists that stores json objects where each object corresponds to an order item.
+There are 3 orders already in the orders.json file. I am going to showcase order no.1 because it is the one with all 3 types of order items (standard pizza orders, custom pizza orders, and side dish orders). The standard pizza, custom pizza, and side dish orders are all lists that stores json objects where each object corresponds to an order item. You can print order 2 and 3 as well but since it will get the md file too long, I'll skip here. (You can do so by printing one order by giving the order number or every order in the system.)
 
 ```
 {
